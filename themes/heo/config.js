@@ -5,7 +5,7 @@ const CONFIG = {
 
   // 首页顶部通知条滚动内容，如不需要可以留空 []
   NOTICE_BAR: [
-    { title: '欢迎来到我的博客', url: 'https://ailance.com' },
+    { title: '欢迎来到我的博客', url: 'https://ailance.top' },
     { title: '访问文档中心获取更多帮助', url: 'https://docs.tangly1024.com' }
   ],
 
@@ -15,7 +15,7 @@ const CONFIG = {
   HERO_TITLE_3: 'TANGLY1024.COM',
   HERO_TITLE_4: '新版上线',
   HERO_TITLE_5: 'NotionNext4.0 轻松定制主题',
-  HERO_TITLE_LINK: 'https://ailance.com',
+  HERO_TITLE_LINK: 'https://ailance.top',
 
   // 英雄区显示三个置顶分类
   HERO_CATEGORY_1: { title: '必看精选', url: '/tag/必看精选' },
