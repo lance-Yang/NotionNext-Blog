@@ -41,6 +41,8 @@ const CommonHead = ({ meta, children }) => {
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:description" content={description} />
             <meta name="twitter:title" content={title} />
+            <meta name="baidu-site-verification" content="code-xV503nRqFD" />
+            <meta name="google-site-verification" content="s9E-aATSZRygNrNXxpafZWNSKvr02iQ71yr7-n1QRQ0" />
 
             {BLOG.COMMENT_WEBMENTION.ENABLE && (
                 <>
