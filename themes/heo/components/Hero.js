@@ -304,7 +304,7 @@ function getTopPosts({ latestPosts, allNavPages }) {
 function TodayCard({ cRef }) {
   const router = useRouter()
   // 卡牌是否盖住下层
-  const [isCoverUp, setIsCoverUp] = useState(true)
+  const [isCoverUp, setIsCoverUp] = useState(false)
 
   /**
    * 外部可以调用此方法
@@ -312,7 +312,7 @@ function TodayCard({ cRef }) {
   useImperativeHandle(cRef, () => {
     return {
       coverUp: () => {
-        setIsCoverUp(true)
+        setIsCoverUp(false)
       }
     }
   })
@@ -337,18 +337,16 @@ function TodayCard({ cRef }) {
   return (
     <div
       id="today-card"
-      className={`${
-        isCoverUp ? ' ' : 'pointer-events-none'
-      } overflow-hidden absolute hidden xl:flex flex-1 flex-col h-full top-0 w-full`}
+      className={`${isCoverUp ? ' ' : 'pointer-events-none'
+        } overflow-hidden absolute hidden xl:flex flex-1 flex-col h-full top-0 w-full`}
     >
       <div
         id="card-body"
         onClick={handleCardClick}
-        className={`${
-          isCoverUp
+        className={`${isCoverUp
             ? 'opacity-100 cursor-pointer'
             : 'opacity-0 transform scale-110 pointer-events-none'
-        } shadow transition-all duration-200 today-card h-full bg-[#0E57D5] rounded-xl relative overflow-hidden flex items-end`}
+          } shadow transition-all duration-200 today-card h-full bg-[#0E57D5] rounded-xl relative overflow-hidden flex items-end`}
       >
         <div
           id="today-card-info"
@@ -360,9 +358,8 @@ function TodayCard({ cRef }) {
           </div>
           <div
             onClick={handleClickMore}
-            className={`'${
-              isCoverUp ? '' : 'hidden pointer-events-none '
-            } flex items-center px-3 h-10 justify-center bg-[#425aef] hover:bg-[#4259efcb] transition-colors duration-100 rounded-3xl`}
+            className={`'${isCoverUp ? '' : 'hidden pointer-events-none '
+              } flex items-center px-3 h-10 justify-center bg-[#425aef] hover:bg-[#4259efcb] transition-colors duration-100 rounded-3xl`}
           >
             <PlusSmall
               className={'w-6 h-6 mr-2 bg-white rounded-full stroke-indigo-400'}
@@ -374,9 +371,8 @@ function TodayCard({ cRef }) {
         </div>
         <div
           id="today-card-cover"
-          className={`${
-            isCoverUp ? '' : ' pointer-events-none'
-          } cursor-pointer today-card-cover absolute w-full h-full top-0`}
+          className={`${isCoverUp ? '' : ' pointer-events-none'
+            } cursor-pointer today-card-cover absolute w-full h-full top-0`}
           style={{
             background:
               "url('https://bu.dusays.com/2023/03/12/640dcd3a1b146.png') no-repeat center /cover"
